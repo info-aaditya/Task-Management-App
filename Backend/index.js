@@ -3,6 +3,9 @@ import dotenv from 'dotenv';
 
 import { connectDB } from './src/config/db.js';
 
+// Import Routes
+import authRoutes from './src/routes/authRoutes.js';
+
 dotenv.config();
 
 const app = express();
@@ -12,6 +15,9 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware to parse JSON requests
 app.use(express.json());
+
+// API routes
+app.use('/api/auth', authRoutes);
 
 // Basic route handler
 app.get('/', (req, res) => {
