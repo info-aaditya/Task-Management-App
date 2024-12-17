@@ -33,5 +33,4 @@ router.post('/add', verifyToken, addAssignee);
 
 router.get('/sort', verifyToken, sortTasks);
 
-
 export default router;
