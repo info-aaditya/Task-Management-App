@@ -6,6 +6,7 @@ import { connectDB } from './src/config/db.js';
 
 // Import Routes
 import authRoutes from './src/routes/authRoutes.js';
+import taskRoutes from './src/routes/taskRoutes.js';
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use(express.json());
 
 // API routes
 app.use('/api/auth', authRoutes);
+app.use('/api/task', taskRoutes);
 
 // Basic route handler
 app.get('/', (req, res) => {
