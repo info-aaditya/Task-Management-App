@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 import { connectDB } from './src/config/db.js';
 
@@ -12,6 +13,9 @@ const app = express();
 
 // Set the server port
 const PORT = process.env.PORT || 3000;
+
+// Middleware to handle CORS, allowing all origins
+app.use(cors({ origin: '*' }));
 
 // Middleware to parse JSON requests
 app.use(express.json());
